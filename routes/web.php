@@ -28,11 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leaves.create');
+    Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leaves.create')->middleware('can:apply-leave');
     Route::get('/leaves', [LeaveController::class, 'index'])->name('leaves.index');
     Route::post('/leaves', [LeaveController::class, 'store'])->name('leaves.store');
-    Route::get('/leaves/{id}/edit', [LeaveController::class, 'edit'])->name('leaves.edit');
-    Route::put('/leaves/{id}', [LeaveController::class, 'update'])->name('leaves.update');
+    Route::get('/leaves/{id}/edit', [LeaveController::class, 'edit'])->name('leaves.edit')->middleware('can:approve-leave');
+    Route::put('/leaves/{id}', [LeaveController::class, 'update'])->name('leaves.update')->middleware('can:approve-leave');
     Route::delete('/leaves/{id}', [LeaveController::class, 'destroy'])->name('leaves.destroy');
 
  });

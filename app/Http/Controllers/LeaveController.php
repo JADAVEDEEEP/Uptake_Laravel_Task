@@ -37,9 +37,10 @@ class LeaveController extends Controller
 public function store(Request $request)
 {
     $request->validate([
+        'days_requested'=>'required|numeric|between:1,12',
         'leave_type' => ['required', 'string'],
         'start_date' => ['required', 'date'],
-        'end_date' => ['required', 'date'],
+        'end_date' => ['required', 'date',],
         'reason' => ['required', 'string'],
     ]);
 
@@ -53,6 +54,8 @@ public function store(Request $request)
         'reason' => $request->reason,
         'status' => 'pending',
     ]);
+    
+   
 
 
 
@@ -98,7 +101,7 @@ public function store(Request $request)
         $size->delete();
     
         
-        return redirect()->route('leaves.index')->with('success', 'User deleted successfully.');
+        return redirect()->route('leaves.index')->with('success', 'Leave Cancelled successfully.');
     }
     
 

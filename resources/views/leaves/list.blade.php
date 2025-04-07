@@ -33,6 +33,8 @@
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">ID</th>
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">User</th>
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Username</th>
+                                <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Sick Leaves</th>
+                                <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Casual Leaves</th>
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Leave Requested</th>
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Leave Type</th>
                                 <th class="py-3 px-6 border-b text-sm font-medium text-gray-700">Start Date</th>
@@ -48,6 +50,8 @@
                                     <td class="py-3 px-6">{{ $leave->id }}</td>
                                     <td class="py-3 px-6">{{ $leave->user_id }}</td>
                                     <td class="py-3 px-6">{{ $leave->user->name }}</td>
+                                    <td class="py-3 px-6">{{ $leave->user->sick_leave_balance }}</td>
+                                    <td class="py-3 px-6">{{ $leave->user->casual_leave_balance }}</td>
                                     <td class="py-3 px-6">{{ $leave->days_requested }}</td>
                                     <td class="py-3 px-6">{{ $leave->leave_type }}</td>
                                     <td class="py-3 px-6">{{ $leave->start_date }}</td>
