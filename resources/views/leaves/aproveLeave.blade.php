@@ -28,31 +28,7 @@
             @csrf
             @method('PUT')
 
-            <div class="space-y-2">
-                <label for="days_requested" class="text-gray-700">Days Requested</label>
-                <input type="number" class="form-input w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="days_requested" name="days_requested" value="{{ old('days_requested', $leaves->days_requested) }}" required min="1">
-            </div>
-
-            <div class="space-y-2">
-                <label for="leave_type" class="text-gray-700">Leave Type</label>
-                <input type="text" class="form-input w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="leave_type" name="leave_type" value="{{ old('leave_type', $leaves->leave_type) }}" required>
-            </div>
-
-            <div class="space-y-2">
-                <label for="start_date" class="text-gray-700">Start Date</label>
-                <input type="date" class="form-input w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="start_date" name="start_date" value="{{ old('start_date', $leaves->start_date) }}" required>
-            </div>
-
-            <div class="space-y-2">
-                <label for="end_date" class="text-gray-700">End Date</label>
-                <input type="date" class="form-input w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="end_date" name="end_date" value="{{ old('end_date', $leaves->end_date) }}" required>
-            </div>
-
-            <div class="space-y-2">
-                <label for="reason" class="text-gray-700">Reason</label>
-                <textarea class="form-textarea w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="reason" name="reason" required>{{ old('reason', $leaves->reason) }}</textarea>
-            </div>
-
+            
             <div class="space-y-2">
                 <label for="status" class="text-gray-700">Status</label>
                 <textarea class="form-textarea w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="status" name="status" required>{{ old('status', $leaves->status) }}</textarea>

@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('users', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name');
-        //     $table->string('email')->unique();
-        //     $table->date('dob');
-        //     $table->string('password');
-        //     $table->unsignedBigInteger('role_id');
-        //     $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-        //     $table->integer('sick_leave_balance')->default(10);
-        //     $table->integer('casual_leave_balance')->default(12);
-        //     $table->timestamps();
-        // });
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->date('dob');
+            $table->string('password');
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->integer('sick_leave_balance')->default(10);
+            $table->integer('casual_leave_balance')->default(12);
+            $table->timestamps();
+        });
     }
         
     
